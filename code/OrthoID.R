@@ -3,8 +3,11 @@ library(shiny)
 library(dplyr)
 
 # Load metadata from CSV (I decided to make 2 seperate csv's for crickets and katydids)
-cricket <- read.csv("Crickets.csv", stringsAsFactors = FALSE)
-katydid <- read.csv("Katydid.csv", stringsAsFactors = FALSE)
+
+#Now it will just pull from github, which will make life easier:)
+cricket <- read.csv("https://raw.githubusercontent.com/joe-elias/OrthoID/main/Audio.20/Crickets.csv", header=TRUE)
+katydid <- read.csv("https://raw.githubusercontent.com/joe-elias/OrthoID/main/Audio.20/Katydid.csv", header=TRUE)
+
 
 # UI ---------------------------------------------------------------------------
 ui <- navbarPage(
